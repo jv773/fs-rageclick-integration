@@ -42,10 +42,10 @@ window.addEventListener('fullstory/rageclick', function(e) {
 	let fsrcValue = getWithExpiry("fsrc");
 	if (fsrcValue == null){
 		setWithExpiry("fsrc","true",30)	//set expiration at 30 days
-		let tsformurlbase = "https://xxxxxxx.typeform.com/to/XXXXXXX#fsurl="; // replace this the URL to your feedback form
+		let tsformurlbase = "https://xxxxxxx.typeform.com/to/XXXXXXX#fsurl="; // replace this with the URL to your feedback form
 		let fsrurl = e.detail.eventReplayUrlAtCurrentTime;
 		let tsformurl = tsformurlbase + fsrurl; //add replay URL as parameter to form URL
-		//log customer FS event
+		//log custom FS event
 		FS.event("Rage Feedback", {"pageurl_str":window.location.href});
 		//open Feedback form
 		window.open(tsformurl);
